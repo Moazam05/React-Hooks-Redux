@@ -3,9 +3,6 @@ import React from 'react';
 import faker from 'faker';
 
 const CommentDetails = (props) => {
-  //   render(props) {
-  console.log(props);
-
   return (
     <>
       <div className='comment'>
@@ -19,12 +16,11 @@ const CommentDetails = (props) => {
           <div className='metadata'>
             <span className='date'>{props.timeAgo}</span>
           </div>
-          <div className='text'>Nice blog post!</div>
+          <div className='text'>{props.content}</div>
         </div>
       </div>
     </>
   );
 };
-// }
 
 export default CommentDetails;

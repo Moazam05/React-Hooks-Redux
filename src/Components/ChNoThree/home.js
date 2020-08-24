@@ -8,13 +8,14 @@ export class home extends Component {
     return (
       <>
         <div className='ui container comments'>
-          <ApprovalCard />
+          <ApprovalCard>
+            <CommentDetails
+              author='Sam'
+              timeAgo='Today at 4:45PM'
+              content='Nice blog post'
+            />
+          </ApprovalCard>
 
-          <CommentDetails
-            author='Sam'
-            timeAgo='Today at 4:45PM'
-            content='Nice blog post'
-          />
           <CommentDetails
             author='Alex'
             timeAgo='Today at 2:00PM'

@@ -7,9 +7,9 @@ export class home extends Component {
     return (
       <>
         <div className='ui container comments'>
-          <CommentDetails author='Sam' />
-          <CommentDetails author='Alex' />
-          <CommentDetails author='Jane' />
+          <CommentDetails author='Sam' timeAgo='Today at 4:45PM' />
+          <CommentDetails author='Alex' timeAgo='Today at 2:00PM' />
+          <CommentDetails author='Jane' timeAgo='Today at 5:00PM' />
         </div>
       </>
     );

@@ -9,6 +9,11 @@ export class home extends Component {
       <>
         <div className='ui container comments'>
           <ApprovalCard>
+            <h4>Warning!</h4>
+            Are you sure you want to do this?
+          </ApprovalCard>
+
+          <ApprovalCard>
             <CommentDetails
               author='Sam'
               timeAgo='Today at 4:45PM'
@@ -16,16 +21,21 @@ export class home extends Component {
             />
           </ApprovalCard>
 
-          <CommentDetails
-            author='Alex'
-            timeAgo='Today at 2:00PM'
-            content='I like the subject'
-          />
-          <CommentDetails
-            author='Jane'
-            timeAgo='Today at 5:00PM'
-            content='I like the writing'
-          />
+          <ApprovalCard>
+            <CommentDetails
+              author='Alex'
+              timeAgo='Today at 2:00PM'
+              content='I like the subject'
+            />
+          </ApprovalCard>
+
+          <ApprovalCard>
+            <CommentDetails
+              author='Jane'
+              timeAgo='Today at 5:00PM'
+              content='I like the writing'
+            />
+          </ApprovalCard>
         </div>
       </>
     );

@@ -1,60 +1,15 @@
 import React, { Component } from 'react';
 
-import faker from 'faker';
-
-import CommentDetails from "./CommentDetails"
+import CommentDetails from './CommentDetails';
 
 export class home extends Component {
   render() {
     return (
       <>
         <div className='ui container comments'>
-
-          <CommentDetails />
-          <CommentDetails />
-          <CommentDetails />
-          {/* <div className='comment'>
-            <a href='/' className='avatar'>
-              <img alt='avatar' src={faker.image.avatar()} />
-            </a>
-            <div className='content'>
-              <a href='/' className='author'>
-                Sam
-              </a>
-              <div className='metadata'>
-                <span className='date'>Today at 11:30AM</span>
-              </div>
-              <div className='text'>Nice blog post!</div>
-            </div>
-          </div> */}
-          {/* <div className='comment'>
-            <a href='/' className='avatar'>
-              <img alt='avatar' src={faker.image.avatar()} />
-            </a>
-            <div className='content'>
-              <a href='/' className='author'>
-                Sam
-              </a>
-              <div className='metadata'>
-                <span className='date'>Today at 11:30AM</span>
-              </div>
-              <div className='text'>Nice blog post!</div>
-            </div>
-          </div> */}
-          {/* <div className='comment'>
-            <a href='/' className='avatar'>
-              <img alt='avatar' src={faker.image.avatar()} />
-            </a>
-            <div className='content'>
-              <a href='/' className='author'>
-                Sam
-              </a>
-              <div className='metadata'>
-                <span className='date'>Today at 11:30AM</span>
-              </div>
-              <div className='text'>Nice blog post!</div>
-            </div>
-          </div> */}
+          <CommentDetails author='Sam' />
+          <CommentDetails author='Alex' />
+          <CommentDetails author='Jane' />
         </div>
       </>
     );

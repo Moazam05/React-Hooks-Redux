@@ -4,24 +4,26 @@ export class season extends Component {
   constructor(props) {
     super(props);
     this.state = { lat: null, errorMessage: '' };
+  }
 
+  componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
-      (position) => {
-        this.setState({ lat: position.coords.latitude });
-      },
-      (err) => {
-        this.setState({ errorMessage: err.message });
-      }
+      (position) => this.setState({ lat: position.coords.latitude }),
+      (err) => this.setState({ errorMessage: err.message })
     );
   }
+  componentDidUpdate() {
+    console.log('Component Did Update');
+  }
+
   render() {
-    return (
-      <>
-        <h3>Latitude: {this.state.lat} </h3>
-        <br />
-        Error: {this.state.errorMessage}
-      </>
-    );
+    if (this.state.errorMessage && !this.state.lat) {
+      return <div>Error: {this.state.errorMessage}</div>;
+    }
+    if (!this.state.errorMessage && this.state.lat) {
+      return <div>Lattitude: {this.state.lat}</div>;
+    }
+    return <div>Loading</div>;
   }
 }
 

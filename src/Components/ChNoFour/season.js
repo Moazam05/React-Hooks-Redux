@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-import SeasonDisplay from './SeasonDisplay';
+export class season extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { lat: null, errorMessage: '' };
 
-const Season = () => {
-  window.navigator.geolocation.getCurrentPosition(
-    (position) => console.log(position),
-    (err) => console.log(err)
-  );
-  return (
-    <>
-      <h3>Hi There!</h3>
-      <SeasonDisplay />
-    </>
-  );
-};
+    window.navigator.geolocation.getCurrentPosition(
+      (position) => {
+        this.setState({ lat: position.coords.latitude });
+      },
+      (err) => {
+        this.setState({ errorMessage: err.message });
+      }
+    );
+  }
+  render() {
+    return (
+      <>
+        <h3>Latitude: {this.state.lat} </h3>
+        <br />
+        Error: {this.state.errorMessage}
+      </>
+    );
+  }
+}
 
-export default Season;
+export default season;

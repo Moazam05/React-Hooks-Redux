@@ -6,7 +6,9 @@ export class Car extends Component {
   render() {
     return (
       <>
-        <SearchBar />
+        <div className='ui container' style={{ marginTop: '10px' }}>
+          <SearchBar />
+        </div>
       </>
     );
   }

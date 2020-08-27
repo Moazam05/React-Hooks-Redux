@@ -3,10 +3,11 @@ import React, { Component } from 'react';
 export class SearchBar extends Component {
   state = { term: '' };
 
-  onFormSubmit(event) {
+  onFormSubmit = (event) => {
     event.preventDefault();
+    this.props.onSubmit(this.state.term);
     // console.log(this.state.term);
-  }
+  };
 
   render() {
     return (

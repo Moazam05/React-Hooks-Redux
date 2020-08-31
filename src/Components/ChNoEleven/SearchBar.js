@@ -9,6 +9,8 @@ export class SearchBar extends Component {
 
   onFormSubmit = (event) => {
     event.preventDefault();
+
+    this.props.onFormSubmit(this.state.term);
   };
 
   //   TODO: Make sure we call

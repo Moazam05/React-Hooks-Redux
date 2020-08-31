@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import SearchBar from './SearchBar';
 import YouTube from '../../Components/ChNoEleven/api/youtube';
+import VideoList from './VideoList';
 
 export class Video extends Component {
   state = { videos: [] };
@@ -20,8 +21,8 @@ export class Video extends Component {
     return (
       <>
         <div className='ui container' style={{ marginTop: '10px' }}>
-          <SearchBar onFormSubmit={this.onTermSubmit} />I have{' '}
-          {this.state.videos.length} videos.
+          <SearchBar onFormSubmit={this.onTermSubmit} />
+          <VideoList videos={this.state.videos} />
         </div>
       </>
     );

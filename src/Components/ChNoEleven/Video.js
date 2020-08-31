@@ -5,7 +5,7 @@ import YouTube from '../../Components/ChNoEleven/api/youtube';
 import VideoList from './VideoList';
 
 export class Video extends Component {
-  state = { videos: [] };
+  state = { videos: [], selectedVideo: null };
 
   onTermSubmit = async (term) => {
     const response = await YouTube.get('/search', {
@@ -17,12 +17,19 @@ export class Video extends Component {
     this.setState({ videos: response.data.items });
   };
 
+  onVideoSelect = (video) => {
+    console.log('From the App!', video);
+  };
+
   render() {
     return (
       <>
         <div className='ui container' style={{ marginTop: '10px' }}>
           <SearchBar onFormSubmit={this.onTermSubmit} />
-          <VideoList videos={this.state.videos} />
+          <VideoList
+            onVideoSelect={this.onVideoSelect}
+            videos={this.state.videos}
+          />
         </div>
       </>
     );

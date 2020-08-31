@@ -3,14 +3,16 @@ import React from 'react';
 
 // import Home from './Components/ChNoThree/home';
 // import Season from './Components/ChNoFour/season';
-import Car from './Components/ChNoSeven/Car';
+// import Car from './Components/ChNoSeven/Car';
+import Video from './Components/ChNoEleven/Video';
 
 function App() {
   return (
     <div className='App'>
       {/* <Home /> */}
       {/* <Season /> */}
-      <Car />
+      {/* <Car /> */}
+      <Video />
     </div>
   );
 }

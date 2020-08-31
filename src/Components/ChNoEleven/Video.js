@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import SearchBar from './SearchBar';
 import YouTube from '../../Components/ChNoEleven/api/youtube';
 import VideoList from './VideoList';
+import VideoDetail from './VideoDetail';
 
 export class Video extends Component {
   state = { videos: [], selectedVideo: null };
@@ -18,7 +19,7 @@ export class Video extends Component {
   };
 
   onVideoSelect = (video) => {
-    console.log('From the App!', video);
+    this.setState({ selectedVideo: video });
   };
 
   render() {
@@ -26,6 +27,7 @@ export class Video extends Component {
       <>
         <div className='ui container' style={{ marginTop: '10px' }}>
           <SearchBar onFormSubmit={this.onTermSubmit} />
+          <VideoDetail video={this.state.selectedVideo} />
           <VideoList
             onVideoSelect={this.onVideoSelect}
             videos={this.state.videos}

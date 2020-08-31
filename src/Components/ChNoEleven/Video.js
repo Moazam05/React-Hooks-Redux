@@ -8,6 +8,10 @@ import VideoDetail from './VideoDetail';
 export class Video extends Component {
   state = { videos: [], selectedVideo: null };
 
+  componentDidMount() {
+    this.onTermSubmit('cartoon');
+  }
+
   onTermSubmit = async (term) => {
     const response = await YouTube.get('/search', {
       params: {
@@ -15,7 +19,10 @@ export class Video extends Component {
       },
     });
 
-    this.setState({ videos: response.data.items });
+    this.setState({
+      videos: response.data.items,
+      selectedVideo: response.data.items[0],
+    });
   };
 
   onVideoSelect = (video) => {

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 export class SongList extends Component {
   render() {
+    console.log(this.props);
     return (
       <>
         <div>
@@ -14,4 +15,9 @@ export class SongList extends Component {
   }
 }
 
-export default connect()(SongList);
+// Configuring Connect with MapStateToProps
+const mapStateToProps = (state) => {
+  return { songs: state.songs };
+};
+
+export default connect(mapStateToProps)(SongList);

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 
+import SongList from './SongList';
 
 export class songs extends Component {
   render() {
     return (
       <>
         <div>
-          <h3>Songs</h3>
+          <SongList />  
         </div>
       </>
     );

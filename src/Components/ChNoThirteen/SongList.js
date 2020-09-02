@@ -34,7 +34,7 @@ export class SongList extends Component {
 
 // Configuring Connect with MapStateToProps
 const mapStateToProps = (state) => {
-  console.log(state);
+//   console.log(state);
   return { songs: state.songs };
 };
 

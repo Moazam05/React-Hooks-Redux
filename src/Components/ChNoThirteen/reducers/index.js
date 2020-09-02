@@ -1,6 +1,7 @@
-// Static Songs List Reducer
+import { combineReducers } from 'redux';
 
-const songReducer = () => {
+// Static Songs List Reducer
+const songsReducer = () => {
   return [
     { title: 'No Scrubs', duration: '4:05' },
     { title: 'Macarena', duration: '2:30' },
@@ -10,10 +11,15 @@ const songReducer = () => {
 };
 
 // Selected Song Reducer
-
 const selectedSongReducer = (selectedSong = null, action) => {
   if (action.type === 'SONG_SELECTED') {
     return action.payload;
   }
   return selectedSong;
 };
+
+// CombineReducers from redux
+export default combineReducers({
+  songs: songsReducer,
+  selectedSong: selectedSongReducer,
+});
